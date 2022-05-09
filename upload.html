@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuateGeeks AR</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <script src="js/alpinejs/main.js" defer></script>
+    <script src="js/config.js"></script>
+    <script src="js/upload/main.js"></script>
+</head>
+<body>
+    <div x-data="guategeeks" class="container">
+        <div class="row">
+            <div class="center columns ten">
+                <h1 class="center">GuatGeeks AR</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="columns">
+                <p>Ingresa tu modelo para cargarlo al sitio</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="five columns">
+                <label for="emailInput">Tu correo:</label>
+                <input class="u-full-width" name="email" type="email" placeholder="geek@guategeeks.com" id="emailInput">
+            </div>
+            <div class="five columns">
+                <label for="fileNameInput">Nombre del Archivo:</label>
+                <input class="u-full-width" name="name" type="text" placeholder="modelo" id="fileNameInput">
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="five columns">
+                <label for="thumbnailInput">Selecciona la imagen de preview:</label>
+                <input type="file" name="preview" accept="image/png, image/gif, image/jpeg" id="thumbnailInput">
+            </div>
+            <div class="five columns">
+                <label for="modelInput">Selecciona el modelo 3D:</label>
+                <input type="file" name="model" id="modelInput">
+            </div>
+        </div>
+        <div class="row">
+            <div class="columns">
+                <button x-on:click="uploadElement()" class="center button-primary u-max-full-width" >Subir Objeto</button>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
