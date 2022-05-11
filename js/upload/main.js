@@ -37,7 +37,7 @@ let loadElement = () => {
     fetch(uploadPath, requestOptions)
     .then(response => {
         if(response.status === 200) {
-            window.location.href = `model.html?open=${fileNameInput.value}`
+            //window.location.href = `model.html?open=${fileNameInput.value}`
         } else {
             alert('Error uploading file')
         }
