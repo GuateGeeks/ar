@@ -151,6 +151,13 @@ AFRAME.registerComponent('model-viewer', {
       var rightHandEl = this.rightHandEl = document.createElement('a-entity');
       var leftHandEl = this.leftHandEl = document.createElement('a-entity');
 
+      var cursor = this.laserControls = document.createElement('a-entity');
+      
+      cursor.setAttribute('cursor', 'fuse: true; fuseTimeout: 500');
+      cursor.setAttribute('position', '0 0 -1');
+      cursor.setAttribute('geometry', 'primitive: ring; radiusInner: 0.02; radiusOuter: 0.03');
+      cursor.setAttribute('material', 'color: black; shader: flat');
+  
       cameraEl.setAttribute('camera', {fov: 60});
       cameraEl.setAttribute('look-controls', {
         magicWindowTrackingEnabled: false,
@@ -168,6 +175,7 @@ AFRAME.registerComponent('model-viewer', {
       leftHandEl.setAttribute('raycaster', {objects: '.raycastable'});
       leftHandEl.setAttribute('line', {color: '#118A7E'});
       
+      // cameraEl.appendChild(cursor);
       cameraRigEl.appendChild(cameraEl);
       cameraRigEl.appendChild(rightHandEl);
       cameraRigEl.appendChild(leftHandEl);
